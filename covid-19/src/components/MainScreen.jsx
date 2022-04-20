@@ -15,13 +15,10 @@ const MainScreen = () => {
         console.log(res.data);
       });
   };
-  useEffect(async () => {
-    await getData();
-  }, []);
 
   return (
     <>
-      <p>{domestic.daejeon.countryNm}</p>
+      <p>앙 개꿀</p>
     </>
   );
 };
