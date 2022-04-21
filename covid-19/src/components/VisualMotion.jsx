@@ -55,7 +55,6 @@ function VisualMotion() {
         <Point className={styles.point}>
           <span>핵심정보</span>를 안내해 드립니다.
         </Point>
-        <PointInfoList />
       </TitleWrapper>
     </Container>
   );
