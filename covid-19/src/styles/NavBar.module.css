@@ -1,7 +1,16 @@
-a {
-  padding: 20px 0 16px;
-  font-size: 16px;
-  display: table-cell;
+.menu {
+  font: bold 16px "malgun gothic";
+  line-height: 50px;
+  margin: 0 auto;
   text-align: center;
-  color: #fff;
+}
+
+.menu > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu > ul > li {
+  position: relative;
 }
