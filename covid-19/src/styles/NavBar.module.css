@@ -1,16 +1,1 @@
-.menu {
-  font: bold 16px "malgun gothic";
-  line-height: 50px;
-  margin: 0 auto;
-  text-align: center;
-}
 
-.menu > ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.menu > ul > li {
-  position: relative;
-}
