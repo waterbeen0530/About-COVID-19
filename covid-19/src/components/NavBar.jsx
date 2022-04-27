@@ -66,7 +66,7 @@ const NavWrapper = styled.div`
   background: #064772;
   &:hover {
     DropWrapper ul li {
-      display: block;
+      /* display: block; */
     }
   }
 `;
