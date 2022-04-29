@@ -37,16 +37,18 @@ const Button = styled.button`
   }
 `;
 
+const Page = styled.main``;
+
 function Home() {
   return (
-    <>
+    <Page>
       <Header />
       <NavBar />
       <VisualMotion />
       <MainScreen />
 
       <Button className="fifth">버튼</Button>
-    </>
+    </Page>
   );
 }
 

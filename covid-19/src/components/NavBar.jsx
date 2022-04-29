@@ -5,6 +5,11 @@ const Container = styled.div`
   position: sticky;
   top: 0;
   width: 100vw;
+  &:hover {
+    height: 100%;
+    box-shadow: 0px 350px 0 rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
+  }
   li {
     list-style: none;
   }
@@ -65,7 +70,7 @@ const MenuBar = styled.div`
   background-color: #fff;
   width: 100vw;
   padding: 0 0;
-  /* display: none; */
+  display: none;
 `;
 
 const MenuWrapper = styled.div`
@@ -94,10 +99,19 @@ const MenuWrapper = styled.div`
 `;
 
 function NavBar() {
+  const dropMenu = useRef(null);
   const dropBackground1 = useRef(null);
   const dropBackground2 = useRef(null);
   const dropBackground3 = useRef(null);
   const dropBackground4 = useRef(null);
+
+  const dropMouseEnter = () => {
+    dropMenu.current.style = "display:block";
+  };
+
+  const dropMouseLeave = () => {
+    dropMenu.current.style = "display:none";
+  };
 
   const handleMouseEnter = () => {
     dropBackground1.current.style = "background-color:#f8fbff";
@@ -131,7 +145,7 @@ function NavBar() {
     dropBackground4.current.style = "background-color: #fff";
   };
   return (
-    <Container>
+    <Container onMouseEnter={dropMouseEnter} onMouseLeave={dropMouseLeave}>
       <NavWrapper>
         <ul>
           <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseleave}>
@@ -148,7 +162,7 @@ function NavBar() {
           </li>
         </ul>
       </NavWrapper>
-      <MenuBar>
+      <MenuBar ref={dropMenu}>
         <MenuWrapper>
           <ul
             ref={dropBackground1}
