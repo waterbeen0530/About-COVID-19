@@ -2,6 +2,9 @@ import React, { useRef } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
+  position: sticky;
+  top: 0;
+  width: 100vw;
   li {
     list-style: none;
   }
@@ -12,9 +15,11 @@ const Container = styled.div`
 `;
 
 const NavWrapper = styled.div`
+  z-index: 1000;
   background-color: #064772;
   width: 100vw;
   ul {
+    position: relative;
     width: 1180px;
     margin: 0 auto;
     padding: 0 0;
@@ -23,11 +28,32 @@ const NavWrapper = styled.div`
     text-align: center;
   }
   li {
+    position: relative;
     padding: 21px 0 16px;
     display: table-cell;
-  }
-  li:hover {
-    background-color: #0d5f95;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 150ms ease-in-out;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 100%;
+      background: #0d5f95;
+      z-index: -1;
+      transition: width 150ms ease-in-out;
+    }
+    &:hover {
+      color: #fff;
+      &:after {
+        width: 100%;
+      }
+    }
   }
   a {
     font-size: 16px;
@@ -38,8 +64,8 @@ const NavWrapper = styled.div`
 const MenuBar = styled.div`
   background-color: #fff;
   width: 100vw;
-  padding: 15px 0 0;
-  display: none;
+  padding: 0 0;
+  /* display: none; */
 `;
 
 const MenuWrapper = styled.div`
@@ -60,47 +86,75 @@ const MenuWrapper = styled.div`
   }
   a {
     color: #000;
-    font-size: 14px;
+    font-size: 15px;
+  }
+  a:hover {
+    color: #38528e;
   }
 `;
 
 function NavBar() {
-  const dropMenu = useRef(null);
-  const backColor1 = useRef(null);
+  const dropBackground1 = useRef(null);
+  const dropBackground2 = useRef(null);
+  const dropBackground3 = useRef(null);
+  const dropBackground4 = useRef(null);
 
   const handleMouseEnter = () => {
-    dropMenu.current.style = "display:block";
+    dropBackground1.current.style = "background-color:#f8fbff";
   };
 
-  const handleMouseLeave = () => {
-    dropMenu.current.style = "display:none";
+  const handleMouseleave = () => {
+    dropBackground1.current.style = "background-color: #fff";
   };
 
-  const backgroundMouseEnter = () => {
-    backColor1.current.style = "background-color: #f8fbff";
+  const handleMouseEnter1 = () => {
+    dropBackground2.current.style = "background-color:#f8fbff";
   };
 
+  const handleMouseleave1 = () => {
+    dropBackground2.current.style = "background-color: #fff";
+  };
+
+  const handleMouseEnter2 = () => {
+    dropBackground3.current.style = "background-color:#f8fbff";
+  };
+
+  const handleMouseleave2 = () => {
+    dropBackground3.current.style = "background-color: #fff";
+  };
+
+  const handleMouseEnter3 = () => {
+    dropBackground4.current.style = "background-color:#f8fbff";
+  };
+
+  const handleMouseleave3 = () => {
+    dropBackground4.current.style = "background-color: #fff";
+  };
   return (
-    <Container onMouseLeave={handleMouseLeave} onMouseEnter={handleMouseEnter}>
+    <Container>
       <NavWrapper>
         <ul>
-          <li onMouseEnter={backgroundMouseEnter}>
+          <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseleave}>
             <a href="">국내 전체</a>
           </li>
-          <li>
+          <li onMouseEnter={handleMouseEnter1} onMouseLeave={handleMouseleave1}>
             <a href="">국내 예방 접종 현황</a>
           </li>
-          <li>
+          <li onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave2}>
             <a href="">국내 카운터</a>
           </li>
-          <li>
+          <li onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave3}>
             <a href="">시도별 발생 동향</a>
           </li>
         </ul>
       </NavWrapper>
-      <MenuBar ref={dropMenu}>
-        <MenuWrapper onMouseEnter={handleMouseEnter}>
-          <ul ref={backColor1}>
+      <MenuBar>
+        <MenuWrapper>
+          <ul
+            ref={dropBackground1}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseleave}
+          >
             <li>
               <a href="">menu1</a>
             </li>
@@ -111,7 +165,11 @@ function NavBar() {
               <a href="">menu3</a>
             </li>
           </ul>
-          <ul>
+          <ul
+            ref={dropBackground2}
+            onMouseEnter={handleMouseEnter1}
+            onMouseLeave={handleMouseleave1}
+          >
             <li>
               <a href="">menu1</a>
             </li>
@@ -122,7 +180,11 @@ function NavBar() {
               <a href="">menu3</a>
             </li>
           </ul>
-          <ul>
+          <ul
+            ref={dropBackground3}
+            onMouseEnter={handleMouseEnter2}
+            onMouseLeave={handleMouseleave2}
+          >
             <li>
               <a href="">menu1</a>
             </li>
@@ -133,7 +195,11 @@ function NavBar() {
               <a href="">menu3</a>
             </li>
           </ul>
-          <ul>
+          <ul
+            ref={dropBackground4}
+            onMouseEnter={handleMouseEnter3}
+            onMouseLeave={handleMouseleave3}
+          >
             <li>
               <a href="">menu1</a>
             </li>

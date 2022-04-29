@@ -4,7 +4,6 @@ import styled from "styled-components";
 import PointInfoList from "./PointInfoList";
 
 const Container = styled.div`
-  position: relative;
   height: 620px;
   padding-top: 100px;
   display: flex;
