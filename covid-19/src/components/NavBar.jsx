@@ -1,109 +1,106 @@
-import React from "react";
-import styles from "../styles/NavBar.module.css";
+import React, { useRef } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  li {
+    list-style: none;
+  }
+
   a {
     text-decoration: none;
   }
 `;
 
-const NavVar = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const NavMenu = styled.ul`
-  width: 1180px;
-  margin: 0;
-  padding: 21px 0 16px 0;
-  display: table;
-  table-layout: fixed;
-  li {
-    display: table-cell;
-    list-style: none;
+const NavWrapper = styled.div`
+  background-color: #064772;
+  width: 100vw;
+  ul {
+    width: 1180px;
+    margin: 0 auto;
+    padding: 0 0;
+    display: table;
+    table-layout: fixed;
     text-align: center;
   }
+  li {
+    padding: 21px 0 16px;
+    display: table-cell;
+  }
+  li:hover {
+    background-color: #0d5f95;
+  }
   a {
+    font-size: 16px;
     color: #fff;
   }
 `;
 
-const DropVar = styled.div`
+const MenuBar = styled.div`
+  background-color: #fff;
+  width: 100vw;
+  padding: 15px 0 0;
+  display: none;
+`;
+
+const MenuWrapper = styled.div`
   width: 1180px;
-  //margin: 0 auto;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0 auto;
   display: table;
   table-layout: fixed;
-`;
-
-const DropDown = styled.ul`
-  margin: 0 auto;
-  padding: 0 0;
-  display: table-cell;
-
+  ul {
+    padding: 10px 0 200px;
+    display: table-cell;
+    text-align: center;
+  }
   li {
     padding-bottom: 10px;
-    list-style: none;
-    text-align: center;
-    font-size: 14px;
   }
-
+  ul:hover {
+    background-color: #f8fbff;
+  }
   a {
     color: #000;
+    font-size: 14px;
   }
-`;
-
-const NavWrapper = styled.div`
-  width: 100%;
-  background: #064772;
-  &:hover {
-    DropWrapper ul li {
-      /* display: block; */
-    }
-  }
-`;
-
-const DropWrapper = styled.div`
-  width: 100%;
-  padding-top: 15px;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  background: #e1e2e3;
 `;
 
 function NavBar() {
+  const dropMenu = useRef(null);
+  const backColor1 = useRef(null);
+
+  const handleMouseEnter = () => {
+    dropMenu.current.style = "display:block";
+  };
+
+  const handleMouseLeave = () => {
+    dropMenu.current.style = "display:none";
+  };
+
+  const backgroundMouseEnter = () => {
+    backColor1.current.style = "background-color: #f8fbff";
+  };
+
   return (
-    <Container className={styles.menu}>
+    <Container onMouseLeave={handleMouseLeave} onMouseEnter={handleMouseEnter}>
       <NavWrapper>
-        <NavVar>
-          <NavMenu>
-            <li>
-              <a href="">국내 전체</a>
-            </li>
-            <li>
-              <a href="">국내 예방 접종 현황</a>
-            </li>
-            <li>
-              <a href="">국내 카운터</a>
-            </li>
-            <li>
-              <a href="">시도별 발생 현황</a>
-            </li>
-          </NavMenu>
-        </NavVar>
+        <ul>
+          <li onMouseEnter={backgroundMouseEnter}>
+            <a href="">국내 전체</a>
+          </li>
+          <li>
+            <a href="">국내 예방 접종 현황</a>
+          </li>
+          <li>
+            <a href="">국내 카운터</a>
+          </li>
+          <li>
+            <a href="">시도별 발생 동향</a>
+          </li>
+        </ul>
       </NavWrapper>
-      <DropWrapper>
-        <DropVar>
-          <DropDown>
+      <MenuBar ref={dropMenu}>
+        <MenuWrapper onMouseEnter={handleMouseEnter}>
+          <ul ref={backColor1}>
             <li>
               <a href="">menu1</a>
             </li>
@@ -113,8 +110,8 @@ function NavBar() {
             <li>
               <a href="">menu3</a>
             </li>
-          </DropDown>
-          <DropDown>
+          </ul>
+          <ul>
             <li>
               <a href="">menu1</a>
             </li>
@@ -124,8 +121,8 @@ function NavBar() {
             <li>
               <a href="">menu3</a>
             </li>
-          </DropDown>
-          <DropDown>
+          </ul>
+          <ul>
             <li>
               <a href="">menu1</a>
             </li>
@@ -135,8 +132,8 @@ function NavBar() {
             <li>
               <a href="">menu3</a>
             </li>
-          </DropDown>
-          <DropDown>
+          </ul>
+          <ul>
             <li>
               <a href="">menu1</a>
             </li>
@@ -146,11 +143,10 @@ function NavBar() {
             <li>
               <a href="">menu3</a>
             </li>
-          </DropDown>
-        </DropVar>
-      </DropWrapper>
+          </ul>
+        </MenuWrapper>
+      </MenuBar>
     </Container>
   );
 }
-
 export default NavBar;
