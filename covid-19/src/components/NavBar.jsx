@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
+  @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Signika:wght@300&display=swap");
   position: sticky;
   top: 0;
   width: 100vw;
@@ -16,6 +17,8 @@ const Container = styled.div`
 
   a {
     text-decoration: none;
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-family: "Signika", sans-serif;
   }
 `;
 
@@ -95,6 +98,7 @@ const MenuWrapper = styled.div`
   }
   a:hover {
     color: #38528e;
+    text-decoration: underline;
   }
 `;
 
@@ -170,7 +174,7 @@ function NavBar() {
             onMouseLeave={handleMouseleave}
           >
             <li>
-              <a href="">menu1</a>
+              <a href="">국내 발생 현황</a>
             </li>
             <li>
               <a href="">menu2</a>

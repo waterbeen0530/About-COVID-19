@@ -4,14 +4,12 @@ import styled from "styled-components";
 import PointInfoList from "./PointInfoList";
 
 const Container = styled.div`
-  height: 620px;
+  height: 520px;
   padding-top: 100px;
   display: flex;
   justify-content: center;
-  background-image: url("https://ncv.kdca.go.kr/ncov/img/main_visual_01.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-size: cover;
+  background: url("https://ncv.kdca.go.kr/ncov/img/main_visual_01.jpg")
+    no-repeat 50% 100%;
 `;
 
 const TitleWrapper = styled.div`
