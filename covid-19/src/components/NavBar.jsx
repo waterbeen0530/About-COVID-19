@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -15,8 +16,8 @@ const Container = styled.div`
     list-style: none;
   }
 
-  a {
-    text-decoration: none;
+  p {
+    margin: 0 0;
     font-family: "IBM Plex Sans KR", sans-serif;
     font-family: "Signika", sans-serif;
   }
@@ -63,7 +64,7 @@ const NavWrapper = styled.div`
       }
     }
   }
-  a {
+  p {
     font-size: 16px;
     color: #fff;
   }
@@ -92,11 +93,11 @@ const MenuWrapper = styled.div`
   ul:hover {
     background-color: #f8fbff;
   }
-  a {
+  p {
     color: #000;
     font-size: 15px;
   }
-  a:hover {
+  p:hover {
     color: #38528e;
     text-decoration: underline;
   }
@@ -153,16 +154,16 @@ function NavBar() {
       <NavWrapper>
         <ul>
           <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseleave}>
-            <a href="">국내 전체</a>
+            <p>국내 전체</p>
           </li>
           <li onMouseEnter={handleMouseEnter1} onMouseLeave={handleMouseleave1}>
-            <a href="">국내 예방 접종 현황</a>
+            <p>국내 예방 접종 현황</p>
           </li>
           <li onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseleave2}>
-            <a href="">국내 카운터</a>
+            <p>국내 카운터</p>
           </li>
           <li onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseleave3}>
-            <a href="">시도별 발생 동향</a>
+            <p>시도별 발생 동향</p>
           </li>
         </ul>
       </NavWrapper>
@@ -173,14 +174,17 @@ function NavBar() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseleave}
           >
+            <Link to="/kor">
+              <li>
+                <p>국내 발생 현황</p>
+              </li>
+            </Link>
+
             <li>
-              <a href="">국내 발생 현황</a>
+              <p>menu2</p>
             </li>
             <li>
-              <a href="">menu2</a>
-            </li>
-            <li>
-              <a href="">menu3</a>
+              <p>menu3</p>
             </li>
           </ul>
           <ul
@@ -189,13 +193,13 @@ function NavBar() {
             onMouseLeave={handleMouseleave1}
           >
             <li>
-              <a href="">menu1</a>
+              <p>menu1</p>
             </li>
             <li>
-              <a href="">menu2</a>
+              <p>menu2</p>
             </li>
             <li>
-              <a href="">menu3</a>
+              <p>menu3</p>
             </li>
           </ul>
           <ul
@@ -204,13 +208,13 @@ function NavBar() {
             onMouseLeave={handleMouseleave2}
           >
             <li>
-              <a href="">menu1</a>
+              <p>menu1</p>
             </li>
             <li>
-              <a href="">menu2</a>
+              <p>menu2</p>
             </li>
             <li>
-              <a href="">menu3</a>
+              <p>menu3</p>
             </li>
           </ul>
           <ul
@@ -219,13 +223,13 @@ function NavBar() {
             onMouseLeave={handleMouseleave3}
           >
             <li>
-              <a href="">menu1</a>
+              <p>menu1</p>
             </li>
             <li>
-              <a href="">menu2</a>
+              <p>menu2</p>
             </li>
             <li>
-              <a href="">menu3</a>
+              <p>menu3</p>
             </li>
           </ul>
         </MenuWrapper>

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import DomesticSituation from "../components/DomesticSituation";
 import Header from "../components/Header";
 import MainScreen from "../components/MainScreen";
 import NavBar from "../components/NavBar";
@@ -10,10 +11,11 @@ const Page = styled.main``;
 function Home() {
   return (
     <Page>
-      <Header />
+      {/* <Header />
       <NavBar />
       <VisualMotion />
-      <MainScreen />
+      <MainScreen /> */}
+      <DomesticSituation />
     </Page>
   );
 }

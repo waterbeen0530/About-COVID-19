@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import DomesticStatistics from "./DomesticStatistics";
 import Header from "./Header";
 import NavBar from "./NavBar";
 
@@ -7,10 +8,6 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  a {
-    text-decoration: none;
-    color: black;
-  }
 `;
 
 const RouteWrapper = styled.div`
@@ -22,11 +19,16 @@ const RouteWrapper = styled.div`
   }
 `;
 
-const Route = styled.div`
+const Subheading = styled.div`
   display: flex;
   justify-content: start;
   align-items: center;
+  p {
+    padding: 0 8px;
+  }
 `;
+
+const Title = styled.div``;
 
 function DomesticSituation() {
   return (
@@ -35,12 +37,16 @@ function DomesticSituation() {
       <NavBar />
       <Container>
         <RouteWrapper>
-          <Route>
-            <a href="">홈</a>
-            <p>></p>
-            <a href="">국내 발생 현황</a>
-          </Route>
+          <Subheading>
+            <p>홈</p>
+            <p>국내 발생 현황</p>
+          </Subheading>
           <h1>국내 발생 현황</h1>
+          <Title>
+            <h4>국내 발생 현황</h4>
+            <p>코로나바이러스감염증-19 국내 발생 현황</p>
+            <DomesticStatistics />
+          </Title>
         </RouteWrapper>
       </Container>
     </>
