@@ -101,44 +101,22 @@ function DomesticStatistics() {
     getData();
   }, []);
 
-  const Area = statistics.map((arr) => (
-    <Wrapper>
-      <Div>
-        <strong>지역</strong>
-        <p>{}</p>
-      </Div>
-      <Div>
-        <strong>확진자</strong>
-        <p>{}</p>
-      </Div>
-      <Div>
-        <strong>완치자</strong>
-        <p>{}</p>
-      </Div>
-      <Div>
-        <strong>사망자</strong>
-        <p>{}</p>
-      </Div>
-    </Wrapper>
-  ));
-
   return (
     <>
       <FirstChart>
         <div>
           <strong>국내 누적 확진자</strong>
-          <p>{}</p>
+          <p>{statistics.length && statistics[0].totalCnt}</p>
         </div>
         <div>
           <strong>국내 누적 완치자</strong>
-          <p>{}</p>
+          <p>{statistics.length && statistics[0].isolCnt}</p>
         </div>
         <div>
           <strong>국내 누적 사망자</strong>
-          <p>{}</p>
+          <p>{statistics.length && statistics[0].deathCnt}</p>
         </div>
       </FirstChart>
-      <SecondChart>{Area}</SecondChart>
     </>
   );
 }
