@@ -179,10 +179,11 @@ function NavBar() {
                 <p>국내 발생 현황</p>
               </li>
             </Link>
-
-            <li>
-              <p>menu2</p>
-            </li>
+            <Link to="/area">
+              <li>
+                <p>지역별 발생 현황</p>
+              </li>
+            </Link>
             <li>
               <p>menu3</p>
             </li>
