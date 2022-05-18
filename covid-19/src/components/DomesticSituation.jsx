@@ -3,6 +3,7 @@ import styled from "styled-components";
 import DomesticStatistics from "./DomesticStatistics";
 import Header from "./Header";
 import NavBar from "./NavBar";
+import { RiArrowRightSLine } from "react-icons/ri";
 
 const Container = styled.div`
   display: flex;
@@ -19,7 +20,7 @@ const RouteWrapper = styled.div`
   }
 `;
 
-const Subheading = styled.div`
+const Address = styled.div`
   display: flex;
   justify-content: start;
   align-items: center;
@@ -37,10 +38,11 @@ function DomesticSituation() {
       <NavBar />
       <Container>
         <RouteWrapper>
-          <Subheading>
+          <Address>
             <p>홈</p>
+            <RiArrowRightSLine />
             <p>국내 발생 현황</p>
-          </Subheading>
+          </Address>
           <h1>국내 발생 현황</h1>
           <Title>
             <h4>국내 발생 현황</h4>
