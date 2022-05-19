@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Header from "./Header";
-import NavBar from "./NavBar";
+import Header from "../Header";
+import NavBar from "../NavBar";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { BiRectangle } from "react-icons/bi";
 
@@ -126,14 +126,6 @@ function RegionalStc() {
   useEffect(() => {
     getData();
   }, []);
-
-  const TodayDate = () => {
-    let today = new Date();
-    let year = today.getFullYear();
-    let month = today.getMonth() + 1;
-    let date = today.getDate();
-    console.log(year + "-" + month + "-" + date);
-  };
 
   const Area = statistics.slice(1).map((arr) => (
     <Wrapper>

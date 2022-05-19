@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import DomesticStatistics from "./DomesticStatistics";
-import Header from "./Header";
-import NavBar from "./NavBar";
+import Header from "../Header";
+import NavBar from "../NavBar";
 import { RiArrowRightSLine } from "react-icons/ri";
 
 const Container = styled.div`
@@ -29,8 +29,6 @@ const Address = styled.div`
   }
 `;
 
-const Title = styled.div``;
-
 function DomesticSituation() {
   return (
     <>
@@ -41,14 +39,16 @@ function DomesticSituation() {
           <Address>
             <p>홈</p>
             <RiArrowRightSLine />
+            <p>국내 전체</p>
+            <RiArrowRightSLine />
             <p>국내 발생 현황</p>
           </Address>
           <h1>국내 발생 현황</h1>
-          <Title>
+          <div>
             <h4>국내 발생 현황</h4>
             <p>코로나바이러스감염증-19 국내 발생 현황</p>
             <DomesticStatistics />
-          </Title>
+          </div>
         </RouteWrapper>
       </Container>
     </>

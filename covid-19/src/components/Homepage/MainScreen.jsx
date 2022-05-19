@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
+  position: relative;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -41,7 +42,14 @@ const Container = styled.div`
   }
 `;
 
+const Cover = styled.div`
+  display: flex;
+`;
+
 const PlusInfo = styled.div`
+  /* position: absolute;
+  top: 170px;
+  left: 200px; */
   display: flex;
   flex-direction: column;
   button {
@@ -85,23 +93,32 @@ const Wrapper = styled.div`
 const MainScreen = () => {
   return (
     <Container>
-      <PlusInfo>
-        <span>참고자료</span>
-        <button>+더보기</button>
-      </PlusInfo>
+      <Cover>
+        <PlusInfo>
+          <span>참고자료</span>
+          <a href="https://www.kdca.go.kr/index.es?sid=a2" target="_blank">
+            <button>+더보기</button>
+          </a>
+        </PlusInfo>
 
-      <Section>
-        <Wrapper>
-          <button>바로가기</button>
-          <h3>코로나바이러스감염증-19(covid-19) 일반인용</h3>
-          <p>코로나바이러스감염증-19(covid-19) 일반인용 바로가기</p>
-        </Wrapper>
-        <Wrapper>
-          <button>바로가기</button>
-          <h3>코로나바이러스감염증-19</h3>
-          <p>코로나바이러스감염증-19 정식 홈페이지</p>
-        </Wrapper>
-      </Section>
+        <Section>
+          <Wrapper>
+            <a href="https://ncv.kdca.go.kr/ncov/" target="_blank">
+              <button>바로가기</button>
+            </a>
+
+            <h3>코로나바이러스감염증-19(covid-19) 일반인용</h3>
+            <p>코로나바이러스감염증-19(covid-19) 일반인용 바로가기</p>
+          </Wrapper>
+          <Wrapper>
+            <a href="http://ncov.mohw.go.kr/" target="_blank">
+              <button>바로가기</button>
+            </a>
+            <h3>코로나바이러스감염증-19</h3>
+            <p>코로나바이러스감염증-19 정식 홈페이지</p>
+          </Wrapper>
+        </Section>
+      </Cover>
     </Container>
   );
 };

@@ -7,15 +7,16 @@ const Container = styled.div`
   position: sticky;
   top: 0;
   width: 100vw;
+
   &:hover {
     height: 100%;
-    box-shadow: 0px 350px 0 rgba(0, 0, 0, 0.7);
-    background-color: rgba(0, 0, 0, 0.7);
   }
   li {
     list-style: none;
   }
-
+  a {
+    text-decoration: none;
+  }
   p {
     margin: 0 0;
     font-family: "IBM Plex Sans KR", sans-serif;
@@ -71,6 +72,7 @@ const NavWrapper = styled.div`
 `;
 
 const MenuBar = styled.div`
+  position: absolute;
   background-color: #fff;
   width: 100vw;
   padding: 0 0;
@@ -184,18 +186,23 @@ function NavBar() {
                 <p>지역별 발생 현황</p>
               </li>
             </Link>
-            <li>
-              <p>menu3</p>
-            </li>
+            <Link to="/Ctt">
+              <li>
+                <p>전일 대비 발생 현황</p>
+              </li>
+            </Link>
           </ul>
           <ul
             ref={dropBackground2}
             onMouseEnter={handleMouseEnter1}
             onMouseLeave={handleMouseleave1}
           >
-            <li>
-              <p>menu1</p>
-            </li>
+            <Link to="EVaccine">
+              <li>
+                <p>국내 예방 접종 현황</p>
+              </li>
+            </Link>
+
             <li>
               <p>menu2</p>
             </li>

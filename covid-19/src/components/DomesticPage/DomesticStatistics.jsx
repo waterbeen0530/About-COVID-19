@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { BiRectangle } from "react-icons/bi";
 
 const FirstChart = styled.div`
   width: 100%;
@@ -36,44 +37,28 @@ const FirstChart = styled.div`
   }
 `;
 
-const SecondChart = styled.div``;
-
-const Wrapper = styled.div`
+const Headline = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-`;
-
-const Div = styled.div`
-  width: 100%;
-  margin-top: 50px;
-  display: table;
-  table-layout: fixed;
-  justify-content: center;
-  align-items: center;
-
-  border: 1px solid #cad5e8;
-
-  strong {
+  div {
     width: 100%;
-    height: 40px;
-    display: table-cell;
+    margin: 20px 0;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: #f7faff;
-    border-top: 2px solid #6d88b7;
   }
 
-  p {
-    height: 80px;
+  h4 {
+    margin: 0 0 0 8px;
+    color: #47a8d1;
+  }
+  h3 {
+    width: 1100px;
     margin: 0 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    color: #444;
-    border-top: 1px solid #cad5e8;
+    padding: 0 0 0 8px;
+  }
+  p {
+    width: 70px;
   }
 `;
 
@@ -103,6 +88,13 @@ function DomesticStatistics() {
 
   return (
     <>
+      <Headline>
+        <h4>
+          <BiRectangle />
+        </h4>
+        <h3>국내 발생 현황</h3>
+        <p>단위 : 명</p>
+      </Headline>
       <FirstChart>
         <div>
           <strong>국내 누적 확진자</strong>

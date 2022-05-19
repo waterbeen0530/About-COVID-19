@@ -1,7 +1,5 @@
 import React from "react";
-import styles from "../styles/VisualMotion.module.css";
 import styled from "styled-components";
-import PointInfoList from "./PointInfoList";
 
 const Container = styled.div`
   height: 520px;
@@ -39,6 +37,9 @@ const Point = styled.p`
   margin: 10px 0 0 0;
   font-size: 60px;
   font-weight: 300;
+  span {
+    font-weight: 700 !important;
+  }
 `;
 
 function VisualMotion() {
@@ -49,7 +50,7 @@ function VisualMotion() {
           코로나 바이러스 감염증-19
           <RedBar></RedBar>
         </Covid>
-        <Point className={styles.point}>
+        <Point>
           <span>핵심정보</span>를 안내해 드립니다.
         </Point>
       </TitleWrapper>
