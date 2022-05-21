@@ -5,6 +5,7 @@ const Container = styled.div`
   position: relative;
   width: 100vw;
   height: 100vh;
+  padding-top: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,6 +53,9 @@ const PlusInfo = styled.div`
   left: 200px; */
   display: flex;
   flex-direction: column;
+  span {
+    font-weight: 700;
+  }
   button {
     margin: 20px 30px 0 0;
     border: none;

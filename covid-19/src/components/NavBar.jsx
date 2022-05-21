@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
+  z-index: 100;
   @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Signika:wght@300&display=swap");
   position: sticky;
   top: 0;

@@ -1,20 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
-import MainScreen from "../components/Homepage/MainScreen";
 import NavBar from "../components/NavBar";
 import VisualMotion from "../components/Homepage/VisualMotion";
-import Footer from "../components/Homepage/Footer";
 import PointInfoList from "../components/Homepage/PointInfoList";
+import MainScreen from "../components/Homepage/MainScreen";
+import Footer from "../components/Homepage/Footer";
 
 const Page = styled.main``;
+
+const Wrapper = styled.div`
+  position: relative;
+`;
 
 function Home() {
   return (
     <Page>
       <Header />
       <NavBar />
-      <VisualMotion />
+      <Wrapper>
+        <VisualMotion />
+        <PointInfoList />
+      </Wrapper>
       <MainScreen />
       <Footer />
     </Page>
