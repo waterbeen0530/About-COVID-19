@@ -203,13 +203,11 @@ function NavBar() {
                 <p>국내 예방 접종 현황</p>
               </li>
             </Link>
-
-            <li>
-              <p>menu2</p>
-            </li>
-            <li>
-              <p>menu3</p>
-            </li>
+            <Link to="AVaccine">
+              <li>
+                <p>지역별 예방 접종 현황</p>
+              </li>
+            </Link>
           </ul>
           <ul
             ref={dropBackground3}

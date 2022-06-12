@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RegionalStc from "./components/DomesticPage/RegionalStc";
 import Contrast from "./components/DomesticPage/Contrast";
 import EntireVaccine from "./components/VaccinationPage/EntireVaccine";
+import AreaVaccine from "./components/VaccinationPage/AreaVaccine";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/area" element={<RegionalStc />} />
           <Route path="/Ctt" element={<Contrast />} />
           <Route path="/EVaccine" element={<EntireVaccine />} />
+          <Route path="/AVaccine" element={<AreaVaccine />} />
         </Routes>
       </BrowserRouter>
     </>

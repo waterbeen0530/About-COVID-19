@@ -76,7 +76,6 @@ const Info = styled.div`
     table-layout: fixed;
     justify-content: center;
     align-items: center;
-
     border: 1px solid #cad5e8;
   }
 
