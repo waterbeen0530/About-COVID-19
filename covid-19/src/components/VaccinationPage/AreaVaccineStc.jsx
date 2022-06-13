@@ -50,7 +50,11 @@ const Info = styled.div`
     display: table-cell;
     border: 1px solid #cad5e8;
     p {
-      text-align: center;
+      height: 80px;
+      margin: 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 `;
