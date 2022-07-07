@@ -198,12 +198,12 @@ function NavBar() {
             onMouseEnter={handleMouseEnter1}
             onMouseLeave={handleMouseleave1}
           >
-            <Link to="EVaccine">
+            <Link to="/EVaccine">
               <li>
                 <p>국내 예방 접종 현황</p>
               </li>
             </Link>
-            <Link to="AVaccine">
+            <Link to="/AVaccine">
               <li>
                 <p>지역별 예방 접종 현황</p>
               </li>
@@ -214,9 +214,11 @@ function NavBar() {
             onMouseEnter={handleMouseEnter2}
             onMouseLeave={handleMouseleave2}
           >
-            <li>
-              <p>menu1</p>
-            </li>
+            <Link to="/DmsCount">
+              <li>
+                <p>시도별 확진자 순위</p>
+              </li>
+            </Link>
             <li>
               <p>menu2</p>
             </li>
@@ -229,15 +231,11 @@ function NavBar() {
             onMouseEnter={handleMouseEnter3}
             onMouseLeave={handleMouseleave3}
           >
-            <li>
-              <p>menu1</p>
-            </li>
-            <li>
-              <p>menu2</p>
-            </li>
-            <li>
-              <p>menu3</p>
-            </li>
+            <Link to="/Decrease">
+              <li>
+                <p>전일 대비 증감</p>
+              </li>
+            </Link>
           </ul>
         </MenuWrapper>
       </MenuBar>
