@@ -5,6 +5,9 @@ import RegionalStc from "./components/DomesticPage/RegionalStc";
 import Contrast from "./components/DomesticPage/Contrast";
 import EntireVaccine from "./components/VaccinationPage/EntireVaccine";
 import AreaVaccine from "./components/VaccinationPage/AreaVaccine";
+import Decrease from "./components/OccurrencePage/Decrease";
+import DomesticCount from "./components/CounterPage/DomesticCount";
+import "./styles/font.css";
 
 function App() {
   return (
@@ -17,6 +20,8 @@ function App() {
           <Route path="/Ctt" element={<Contrast />} />
           <Route path="/EVaccine" element={<EntireVaccine />} />
           <Route path="/AVaccine" element={<AreaVaccine />} />
+          <Route path="/Decrease" element={<Decrease />} />
+          <Route path="/DmsCount" element={<DomesticCount />} />
         </Routes>
       </BrowserRouter>
     </>
