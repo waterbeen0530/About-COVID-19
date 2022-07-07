@@ -1,6 +1,6 @@
-import DomesticSituation from "./components/DomesticPage/DomesticSituation";
-import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import DomesticSituation from "./components/DomesticPage/DomesticSituation";
 import RegionalStc from "./components/DomesticPage/RegionalStc";
 import Contrast from "./components/DomesticPage/Contrast";
 import EntireVaccine from "./components/VaccinationPage/EntireVaccine";
