@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import DomesticStatistics from "./DomesticStatistics";
-import Header from "../Header";
-import NavBar from "../NavBar";
+import Header from "../common/Header";
+import NavBar from "../common/NavBar";
 import { RiArrowRightSLine } from "react-icons/ri";
 
 const Container = styled.div`

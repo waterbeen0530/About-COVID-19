@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Header from "../Header";
-import NavBar from "../NavBar";
+import Header from "../common/Header";
+import NavBar from "../common/NavBar";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { BiRectangle } from "react-icons/bi";
 

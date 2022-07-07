@@ -86,8 +86,6 @@ function EntireVaccineStc() {
     getData();
   }, []);
 
-  const chart = statistics.map((arr) => <></>);
-
   return (
     <>
       <Headline>
